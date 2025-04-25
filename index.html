@@ -1,4 +1,33 @@
-<form action="scrape" method="GET">
-  <input type="url" name="url" placeholder="Enter URL">
-  <button type="submit">Scrape</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrape Form</title>
+</head>
+<body>
+    <h1>Scrape Website</h1>
+    <form action="ScrapeServlet" method="post">
+        <label for="url">URL: </label>
+        <input type="text" id="url" name="url" required><br><br>
+        
+        <label for="title">Scrape Title</label>
+        <input type="checkbox" id="title" name="title"><br>
+        
+        <label for="links">Scrape Links</label>
+        <input type="checkbox" id="links" name="links"><br>
+        
+        <label for="images">Scrape Images</label>
+        <input type="checkbox" id="images" name="images"><br><br>
+        
+        <input type="submit" value="Scrape">
+    </form>
+    
+    <br>
+    <a href="ScrapeServlet?action=download" id="downloadResults" style="display:none">Download Results as CSV</a>
+
+    <div id="sessionInfo">
+        <!-- Session info will be displayed here -->
+    </div>
+</body>
+</html>
